@@ -14,7 +14,7 @@ bmp = bmp180(0x77)
 metodo = 'POST'
 uri = "https://api.thingspeak.com/channels.json"
 cabeceras = {'Host': 'api.thingspeak.com', 'Content-Type': 'application/x-www-form-urlencoded'}
-contenido = {'api_key': 'FS4JEW6KCH12Y2JF', 'name': 'Sensor', 'field1': "Temperatura (ºC)", 'field2': "Presión (hPa)", 'field3': "Altura (m)"}
+contenido = {'api_key': '----------', 'name': 'Sensor', 'field1': "Temperatura (ºC)", 'field2': "Presión (hPa)", 'field3': "Altura (m)"}
 contenido_encoded = urllib.parse.urlencode(contenido)
 cabeceras['Content-Length'] = str(len(contenido_encoded))
 respuesta = requests.request(metodo, uri, data=contenido_encoded, headers=cabeceras, allow_redirects=False)
@@ -50,7 +50,7 @@ def handler(sig_num, frame):
     #metodo = "DELETE"
     #uri = "https://api.thingspeak.com/channels/" + str(channel_id) + "/feeds.json"
     #cabeceras = {"Host": "api.thingspeak.com", "Content-Type": "application/x-www-form-urlencoded"}
-    #cuerpo = {"api_key": "FS4JEW6KCH12Y2JF"}
+    #cuerpo = {"api_key": "----------"}
     #cuerpo_coded = urllib.parse.urlencode(cuerpo)
 
     #respuesta = requests.delete(uri, headers=cabeceras, data=cuerpo_coded)
